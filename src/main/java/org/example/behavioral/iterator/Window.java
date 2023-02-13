@@ -1,7 +1,7 @@
 package org.example.behavioral.iterator;
 
 public class Window implements EntityOfHouse {
-    private int id;
+    private final int id;
 
     public Window(int id) {
         this.id = id;

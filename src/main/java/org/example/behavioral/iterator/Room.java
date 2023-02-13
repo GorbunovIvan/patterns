@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class Room implements EntityOfHouse {
-    private int id;
+    private final int id;
 
-    List<Window> windows;
+    final List<Window> windows;
 
     public Room(int id, List<Window> windows) {
         this.id = id;

@@ -6,7 +6,7 @@ public enum Priority {
     IMPORTANT(2),
     ASAP(3); // as soon as possible
 
-    private int index;
+    private final int index;
 
     Priority(int index) {
         this.index = index;

@@ -1,9 +1,9 @@
 package org.example.structural.facade;
 
 public class CleaningTheRoom {
-    private ScanningWhatToClean scanning = new ScanningWhatToClean();
-    private GatheringMess gatheringMess = new GatheringMess();
-    private PuttingThingsInOrder puttingThingsInOrder = new PuttingThingsInOrder();
+    private final ScanningWhatToClean scanning = new ScanningWhatToClean();
+    private final GatheringMess gatheringMess = new GatheringMess();
+    private final PuttingThingsInOrder puttingThingsInOrder = new PuttingThingsInOrder();
 
     public void makeCleaning() {
         System.out.println("starting to clean the room\n");
