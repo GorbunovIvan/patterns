@@ -1,7 +1,7 @@
 package org.example.structural.decorator;
 
 public abstract class EmployeeDecorator implements Employee {
-    protected final Employee employee;
+    protected Employee employee;
 
     public EmployeeDecorator(Employee employee) {
         this.employee = employee;
