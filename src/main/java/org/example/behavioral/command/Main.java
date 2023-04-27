@@ -5,7 +5,7 @@ import org.example.behavioral.command.commandsOfDog.*;
 public class Main {
     public static void main(String[] args) {
         Dog dog = new Dog();
-        Command MakingSound = new MakingSound(dog);
+        Command makingSound = new MakingSound(dog);
         Command running = new Running(dog);
         Command jumping = new Jumping(dog);
         Command eating = new Eating(dog); // does not exist as a method in Dog-class
