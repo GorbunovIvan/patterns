@@ -3,8 +3,6 @@ package org.springExamples.behavioral.iterator;
 import org.springExamples.behavioral.iterator.beans.*;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-import java.util.List;
-
 public class Main {
 
     public static void main(String[] args) {

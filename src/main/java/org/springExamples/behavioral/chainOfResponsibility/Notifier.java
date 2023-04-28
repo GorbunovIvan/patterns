@@ -1,7 +1,5 @@
 package org.springExamples.behavioral.chainOfResponsibility;
 
-import org.springframework.beans.factory.annotation.Qualifier;
-
 public abstract class Notifier {
 
     private final Priority priority;

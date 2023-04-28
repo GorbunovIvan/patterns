@@ -3,7 +3,6 @@ package org.springExamples.behavioral.interpreter;
 import org.springExamples.behavioral.interpreter.expresions.AndExpression;
 import org.springExamples.behavioral.interpreter.expresions.Expression;
 import org.springExamples.behavioral.interpreter.expresions.OrExpression;
-import org.springExamples.behavioral.interpreter.expresions.TerminalExpression;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
