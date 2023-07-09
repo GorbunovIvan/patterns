@@ -1,7 +1,9 @@
 package org.example.behavioral.state;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Program program = new Program();
         program.setNextActivity();
 

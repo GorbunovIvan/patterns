@@ -1,6 +1,7 @@
 package org.example.behavioral.interpreter.expresions;
 
 public class OrExpression implements Expression {
+
     private final Expression expression1;
     private final Expression expression2;
 

@@ -1,6 +1,7 @@
 package org.example.creational.prototype;
 
 public class BikeFactory {
+
     Bike bike;
 
     public BikeFactory(Bike bike) {

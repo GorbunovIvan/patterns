@@ -3,7 +3,9 @@ package org.example.behavioral.iterator;
 import java.util.List;
 
 public class Main {
+
     public static void main(String[] args) {
+
         House house = new House();
         house.rooms.add(new Room(1, List.of(new Window(1), new Window(2))));
         house.rooms.add(new Room(2, List.of(new Window(3), new Window(4))));

@@ -1,7 +1,9 @@
 package org.example.behavioral.mediator;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Chat chat = new SimpleChat();
 
         User admin = new SimpleUser("Admin", chat);

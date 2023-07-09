@@ -5,6 +5,7 @@ import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class JobSite implements Observed {
+
     private final Set<Observer> subscribers = new HashSet<>();
     private final Set<String> vacancies = new LinkedHashSet<>();
 

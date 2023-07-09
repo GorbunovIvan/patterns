@@ -7,7 +7,9 @@ import org.example.behavioral.visitor.vehicles.Vehicle;
 import org.example.behavioral.visitor.ways.Way;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Way way = new Way();
 
         Vehicle car = new Car();

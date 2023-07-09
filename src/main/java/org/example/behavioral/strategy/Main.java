@@ -3,7 +3,9 @@ package org.example.behavioral.strategy;
 import org.example.behavioral.strategy.states.*;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Program program = new Program();
 
         program.setActivity(new Initializing());

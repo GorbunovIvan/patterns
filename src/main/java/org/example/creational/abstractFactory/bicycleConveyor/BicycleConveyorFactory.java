@@ -6,6 +6,7 @@ import org.example.creational.abstractFactory.abstractConveyor.Stuffing;
 import org.example.creational.abstractFactory.abstractConveyor.WheelsAdder;
 
 public class BicycleConveyorFactory implements ConveyorFactory {
+
     @Override
     public BodyMaker getBodyMaker() {
         return new BicycleBodyMaker();

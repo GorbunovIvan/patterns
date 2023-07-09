@@ -1,7 +1,9 @@
 package org.example.behavioral.observer;
 
 public class Main {
+
     public static void main(String[] args) {
+
         JobSite jobSite = new JobSite();
 
         jobSite.addVacancy("first vacancy");

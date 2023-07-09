@@ -5,6 +5,7 @@ import org.example.behavioral.visitor.ways.Finishing;
 import org.example.behavioral.visitor.ways.TraversingRoads;
 
 public class Bike implements Vehicle {
+
     @Override
     public void goToDestination(Departure way) {
         System.out.println("bike starts to move");

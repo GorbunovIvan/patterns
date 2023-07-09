@@ -1,6 +1,7 @@
 package org.example.behavioral.interpreter.expresions;
 
 public class TerminalExpression implements Expression {
+
     private final String data;
 
     public TerminalExpression(String data) {

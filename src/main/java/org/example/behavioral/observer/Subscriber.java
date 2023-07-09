@@ -3,6 +3,7 @@ package org.example.behavioral.observer;
 import java.util.Set;
 
 public class Subscriber implements Observer {
+
     public final String name;
 
     public Subscriber(String name) {

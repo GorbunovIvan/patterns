@@ -1,6 +1,7 @@
 package org.example.creational.prototype;
 
 public class Bike {
+
     private int horsePower;
     private int weight;
     private int year;

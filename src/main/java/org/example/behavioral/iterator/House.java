@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.NoSuchElementException;
 
 public class House {
+
     final List<Room> rooms = new ArrayList<>();
 
     public Iterator<EntityOfHouse> iterator() {

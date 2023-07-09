@@ -1,7 +1,9 @@
 package org.example.creational.prototype;
 
 public class Main {
+
     public static void main(String[] args) {
+
 //        // Before
 //        Bike bike1 = new Bike();
 //        bike1.setHorsePower(50);

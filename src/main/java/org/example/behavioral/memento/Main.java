@@ -1,7 +1,9 @@
 package org.example.behavioral.memento;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Project project = new Project("1");
         project.saveVersion();
         System.out.println(project);

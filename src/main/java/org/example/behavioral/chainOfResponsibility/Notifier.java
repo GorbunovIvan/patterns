@@ -1,6 +1,7 @@
 package org.example.behavioral.chainOfResponsibility;
 
 public abstract class Notifier {
+
     private final Priority priority;
     private Notifier nextNotifier;
 

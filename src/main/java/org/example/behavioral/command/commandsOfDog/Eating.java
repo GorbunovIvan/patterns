@@ -3,6 +3,7 @@ package org.example.behavioral.command.commandsOfDog;
 import org.example.behavioral.command.Dog;
 
 public class Eating extends Command {
+
     public Eating(Dog dog) {
         super(dog);
     }

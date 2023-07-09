@@ -1,6 +1,7 @@
 package org.example.creational.singleton;
 
 public class ProgramLogger { // also may be final if necessary
+
     private static ProgramLogger logger;
     private final StringBuffer logs;
 

@@ -4,6 +4,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 public class SimpleChat implements Chat {
+
     private final Set<User> users = new HashSet<>();
 
     @Override

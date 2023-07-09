@@ -6,7 +6,9 @@ import org.example.behavioral.interpreter.expresions.OrExpression;
 import org.example.behavioral.interpreter.expresions.TerminalExpression;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Expression expressionJava = new TerminalExpression("Java");
         Expression expressionSpring = new TerminalExpression("Spring");
 

@@ -1,6 +1,7 @@
 package org.example.behavioral.mediator;
 
 public class SimpleUser implements User {
+
     private final String name;
     private final Chat chat;
 

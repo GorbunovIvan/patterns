@@ -3,6 +3,7 @@ package org.example.behavioral.strategy;
 import org.example.behavioral.strategy.states.*;
 
 public class Program {
+
     private Activity activity;
 
     public Activity getActivity() {

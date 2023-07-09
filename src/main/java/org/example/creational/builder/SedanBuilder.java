@@ -3,6 +3,7 @@ package org.example.creational.builder;
 import org.example.creational.builder.abstractCar.CarBuilder;
 
 public class SedanBuilder implements CarBuilder {
+
     private Sedan car;
 
     private SedanBuilder(){}

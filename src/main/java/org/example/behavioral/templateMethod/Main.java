@@ -1,7 +1,9 @@
 package org.example.behavioral.templateMethod;
 
 public class Main {
+
     public static void main(String[] args) {
+
         WorkingWithDatabaseTemplate gettingData = new GettingData();
         gettingData.workWithDataBase();
 

@@ -1,6 +1,7 @@
 package org.example.creational.builder.abstractCar;
 
 public interface CarBuilder {
+
     CarBuilder setColor(String color);
 
     CarBuilder setModel(String model);

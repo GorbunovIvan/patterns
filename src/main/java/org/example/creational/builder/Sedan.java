@@ -3,6 +3,7 @@ package org.example.creational.builder;
 import org.example.creational.builder.abstractCar.Car;
 
 public class Sedan implements Car {
+
     private String color;
     private String model;
     private int numberOfSeats;

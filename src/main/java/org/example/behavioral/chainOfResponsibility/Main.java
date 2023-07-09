@@ -1,7 +1,9 @@
 package org.example.behavioral.chainOfResponsibility;
 
 public class Main {
+
     public static void main(String[] args) {
+
         Notifier simpleReport = new SimpleReportNotifier(Priority.SIMPLE);
         Notifier emailReport = new EmailNotifier(Priority.IMPORTANT);
         Notifier SMSReport = new SMSNotifier(Priority.ASAP);

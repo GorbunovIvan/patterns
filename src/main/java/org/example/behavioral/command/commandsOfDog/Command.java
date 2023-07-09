@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Command {
+
     protected final Dog dog;
     private static final List<Command> EXECUTED_COMMANDS = new ArrayList<>();
 

@@ -3,6 +3,7 @@ package org.example.behavioral.memento;
 import java.time.LocalDateTime;
 
 public class Save {
+
     public final String version;
     public final LocalDateTime date;
 

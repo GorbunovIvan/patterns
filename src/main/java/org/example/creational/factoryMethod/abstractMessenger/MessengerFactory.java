@@ -4,6 +4,7 @@ import org.example.creational.factoryMethod.telegram.TelegramFactory;
 import org.example.creational.factoryMethod.viber.ViberFactory;
 
 public interface MessengerFactory {
+
     Messenger createMessenger();
 
     static MessengerFactory createMessengerFactoryByMessengerName(String name) {
