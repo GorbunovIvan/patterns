@@ -1,44 +1,39 @@
 package org.springExamples.creational.builder;
 
 import org.springExamples.creational.builder.abstractCar.CarBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class SedanBuilder implements CarBuilder {
 
-    private final Sedan car;
+    private Sedan car;
 
-    @Autowired
-    public SedanBuilder(Sedan car) {
-        this.car = car;
+    private SedanBuilder(){}
+
+    public static CarBuilder newCar() {
+        SedanBuilder builder = new SedanBuilder();
+        builder.car = new Sedan();
+        return builder;
     }
 
-    @Override
     public CarBuilder setColor(String color) {
-        car.setColor(color);
+        this.car.setColor(color);
         return this;
     }
 
-    @Override
     public CarBuilder setModel(String model) {
-        car.setModel(model);
+        this.car.setModel(model);
         return this;
     }
 
-    @Override
     public CarBuilder setNumberOfSeats(int numberOfSeats) {
-        car.setNumberOfSeats(numberOfSeats);
+        this.car.setNumberOfSeats(numberOfSeats);
         return this;
     }
 
-    @Override
     public CarBuilder setNumberOfDoors(int numberOfDoors) {
-        car.setNumberOfDoors(numberOfDoors);
+        this.car.setNumberOfDoors(numberOfDoors);
         return this;
     }
 
-    @Override
     public Sedan build() {
         if (car.getModel().isEmpty())
             throw new IllegalStateException("empty model");

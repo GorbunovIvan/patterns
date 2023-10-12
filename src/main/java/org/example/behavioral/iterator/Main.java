@@ -14,12 +14,14 @@ public class Main {
 
         System.out.println("-- Iterator -- ");
         Iterator<EntityOfHouse> iterator = house.iterator();
-        while (iterator.hasNext())
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
+        }
 
         System.out.println("\n-- Deep iterator -- ");
         iterator = house.deepIterator();
-        while (iterator.hasNext())
+        while (iterator.hasNext()) {
             System.out.println(iterator.next());
+        }
     }
 }

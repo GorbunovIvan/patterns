@@ -1,26 +1,17 @@
 package org.springExamples.behavioral.mediator;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Chat chat = new SimpleChat();
 
-        User admin = context.getBean(SimpleUser.class);
-        admin.setName("Admin");
-
-        User user1 = context.getBean(SimpleUser.class);
-        user1.setName("User-1");
-
-        User user2 = context.getBean(SimpleUser.class);
-        user2.setName("User-2");
+        User admin = new SimpleUser("Admin", chat);
+        User user1 = new SimpleUser("User-1", chat);
+        User user2 = new SimpleUser("User-2", chat);
 
         admin.sendMessage("Everything is fixed");
         user1.sendMessage("Great!");
-
-        context.close();
 
         // The chat (mediator here) is a class that encapsulates the relations and communication between other classes.
         // Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it

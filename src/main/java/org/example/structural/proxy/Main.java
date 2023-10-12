@@ -1,7 +1,9 @@
 package org.example.structural.proxy;
 
 public class Main {
+
     public static void main(String[] args) {
+
 //        // Before
 //        Animal dog = new Dog();
 //        System.out.println("dog is created, now it will make sound");

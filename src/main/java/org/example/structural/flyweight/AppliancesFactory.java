@@ -8,7 +8,9 @@ public class AppliancesFactory {
     private static final Map<String, Appliances> appliancesMap = new HashMap<>();
 
     public static Appliances getAppliancesByName(String name) {
+
         Appliances appliances = appliancesMap.get(name);
+
         if (appliances == null) {
             switch (name.toLowerCase()) {
                 case "fridge" -> {
@@ -21,7 +23,8 @@ public class AppliancesFactory {
                 }
             }
             appliancesMap.put(name, appliances);
-       }
+        }
+
         return appliances;
     }
 

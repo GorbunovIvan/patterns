@@ -1,6 +1,7 @@
 package org.example.structural.proxy;
 
 public class ProxyDog implements Animal {
+
     Animal dog;
 
     @Override

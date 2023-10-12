@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Corridor implements Room {
+
     private final List<Window> windows = new ArrayList<>();
 
     public void addWindow(Window window) {

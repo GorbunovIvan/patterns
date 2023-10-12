@@ -1,6 +1,7 @@
 package org.example.structural.adapter;
 
 public class AdapterDogToAnimal extends Dog implements Animal {
+
     @Override
     public void eat() {
         eatFood();

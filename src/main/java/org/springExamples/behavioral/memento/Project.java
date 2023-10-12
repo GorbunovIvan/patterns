@@ -1,25 +1,16 @@
 package org.springExamples.behavioral.memento;
 
-import org.springframework.beans.factory.BeanFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
 import java.time.LocalDateTime;
 
-@Component
 public class Project {
 
     private String version;
     private LocalDateTime date;
 
-    public final GitHub gitHub;
+    public final GitHub gitHub = new GitHub();
 
-    private final BeanFactory beanFactory;
-
-    @Autowired
-    public Project(GitHub gitHub, BeanFactory beanFactory) {
-        this.gitHub = gitHub;
-        this.beanFactory = beanFactory;
+    public Project(String version) {
+        this.version = version;
         this.date = LocalDateTime.now();
     }
 
@@ -33,8 +24,7 @@ public class Project {
     }
 
     public void saveVersion() {
-//        Save save = new Save(version, date);
-        Save save = beanFactory.getBean(Save.class, version, date);
+        Save save = new Save(version, date);
         gitHub.push(save);
     }
 

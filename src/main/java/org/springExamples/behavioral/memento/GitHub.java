@@ -1,11 +1,8 @@
 package org.springExamples.behavioral.memento;
 
-import org.springframework.stereotype.Component;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Component
 public class GitHub {
 
     private final List<Save> saves = new ArrayList<>();

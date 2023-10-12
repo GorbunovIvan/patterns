@@ -1,13 +1,17 @@
 package org.springExamples.creational.singleton;
 
-import org.springframework.stereotype.Component;
+public class ProgramLogger { // also may be final if necessary
 
-@Component
-public class ProgramLogger {
-
+    private static ProgramLogger logger;
     private final StringBuffer logs;
 
-    protected ProgramLogger() {
+    public synchronized static ProgramLogger getLogger() {
+        if (logger == null)
+            logger = new ProgramLogger();
+        return logger;
+    }
+
+    private ProgramLogger() {
         logs = new StringBuffer();
     }
 

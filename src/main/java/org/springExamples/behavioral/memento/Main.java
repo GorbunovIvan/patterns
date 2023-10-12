@@ -1,15 +1,10 @@
 package org.springExamples.behavioral.memento;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
-        Project project = context.getBean(Project.class);
-        project.setVersion("1");
+        Project project = new Project("1");
         project.saveVersion();
         System.out.println(project);
 
@@ -27,8 +22,6 @@ public class Main {
         System.out.println(project);
 
         // project.saveVersion(); - we can save it to make version "2" current
-
-        context.close();
 
         // The memento takes out the internal state of the object to have the ability to restore the object.
         // Useful when we need breakpoints for an object.

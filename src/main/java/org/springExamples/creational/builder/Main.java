@@ -1,15 +1,24 @@
 package org.springExamples.creational.builder;
 
 import org.springExamples.creational.builder.abstractCar.Car;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
+//        // Before
+//        Car car = new Car();
+//
+//        car.setColor("Black");
+//        car.setModel("BMW");
+//        car.setNumberOfSeats(5);
+//        car.setNumberOfDoors(2); // actually wrong because 5 seats and only 2 doors is strange
+//
+//        // we are not sure if all the fields are filled
+//        System.out.println(car);
 
-        Car car = context.getBean(SedanBuilder.class)
+        // After
+        Car car = SedanBuilder.newCar()
                 .setColor("Black")
                 .setModel("BMW")
                 .setNumberOfSeats(5)
@@ -17,7 +26,5 @@ public class Main {
                 .build();
 
         System.out.println(car);
-
-        context.close();
     }
 }

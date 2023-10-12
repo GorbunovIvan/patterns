@@ -17,9 +17,11 @@ public enum Priority {
     }
 
     public static Priority getByIndex(int index) {
-        for (Priority priority : Priority.values())
-            if (priority.index == index)
+        for (Priority priority : Priority.values()) {
+            if (priority.index == index) {
                 return priority;
+            }
+        }
         throw new IllegalArgumentException();
     }
 }

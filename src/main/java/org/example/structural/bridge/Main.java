@@ -7,6 +7,7 @@ import org.example.structural.bridge.devices.Device;
 import org.example.structural.bridge.devices.Smartphone;
 
 public class Main {
+
     public static void main(String[] args) {
 
         Device[] devices = {
@@ -17,8 +18,9 @@ public class Main {
                 new Computer(new BookReaderRunning())
         };
 
-        for (var device : devices)
+        for (var device : devices) {
             device.makeUse();
+        }
 
         // The point is that the Device and the Activity abstractions and their implementations
         // are put in separate class hierarchies, so we can change the matching between their implementations.

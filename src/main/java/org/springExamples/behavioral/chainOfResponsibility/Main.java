@@ -1,14 +1,15 @@
 package org.springExamples.behavioral.chainOfResponsibility;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Notifier simpleReport = new SimpleReportNotifier(Priority.SIMPLE);
+        Notifier emailReport = new EmailNotifier(Priority.IMPORTANT);
+        Notifier SMSReport = new SMSNotifier(Priority.ASAP);
 
-        Notifier simpleReport = context.getBean(SimpleReportNotifier.class);
+        simpleReport.setNextNotifier(emailReport);
+        emailReport.setNextNotifier(SMSReport);
 
         simpleReport.sendMessage("little problem", Priority.SIMPLE);
         System.out.println();
@@ -17,8 +18,6 @@ public class Main {
         System.out.println();
 
         simpleReport.sendMessage("very urgently", Priority.ASAP);
-
-        context.close();
 
         // If we have a request (or task) that can be handled by one or more classes,
         // and we may not know these classes previously because it will be evaluated at runtime

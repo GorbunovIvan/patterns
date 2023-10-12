@@ -3,6 +3,7 @@ package org.example.structural.bridge.devices;
 import org.example.structural.bridge.activities.Activity;
 
 public class Smartphone extends Device {
+
     public Smartphone(Activity activity) {
         super(activity);
     }

@@ -1,18 +1,19 @@
 package org.springExamples.creational.factoryMethod;
 
 import org.springExamples.creational.factoryMethod.abstractMessenger.Messenger;
-import org.springExamples.creational.factoryMethod.telegram.Telegram;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springExamples.creational.factoryMethod.abstractMessenger.MessengerFactory;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
+//        // Before
+//        Viber viber = new Viber();
+//        viber.run();
 
-        Messenger messenger = context.getBean(Telegram.class);
+        // After
+        MessengerFactory factory = MessengerFactory.createMessengerFactoryByMessengerName("telegram");
+        Messenger messenger = factory.createMessenger();
         messenger.run();
-
-        context.close();
     }
 }

@@ -1,24 +1,18 @@
 package org.springExamples.structural.decorator;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 public class Main {
 
     public static void main(String[] args) {
 
-        // Before
-//        Employee employee = context.getBean(SimpleWorker.class);
+//        // Before
+//        Employee employee = new SimpleWorker();
 //        System.out.println(employee.doWork());
 
         // After
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
-        Employee employee = context.getBean(SeniorWorker.class);
+        Employee employee = new SeniorWorker(new SimpleWorker());
         System.out.println(employee.doWork());
 
-        context.close();
-
-        // A decorator is just a "copy" of a class that we can't extend, so we encapsulate it (via composition)
+        // A decorator is just a "copy" of a class that we can't extend, so we encapsulate it (via association)
         // and then we can easily extend that decorator class and add our functionality
     }
 }

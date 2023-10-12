@@ -1,32 +1,27 @@
 package org.springExamples.behavioral.strategy;
 
 import org.springExamples.behavioral.strategy.states.*;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
+        Program program = new Program();
 
-        Program program = context.getBean(Program.class);
-
-        program.setActivity(context.getBean(Initializing.class));
+        program.setActivity(new Initializing());
         program.doCurrentAction();
 
-        program.setActivity(context.getBean(ConnectingToInternet.class));
+        program.setActivity(new ConnectingToInternet());
         program.doCurrentAction();
 
-        program.setActivity(context.getBean(ParsingData.class));
+        program.setActivity(new ParsingData());
         program.doCurrentAction();
 
-        program.setActivity(context.getBean(SavingData.class));
+        program.setActivity(new SavingData());
         program.doCurrentAction();
 
-        program.setActivity(context.getBean(ShuttingDown.class));
+        program.setActivity(new ShuttingDown());
         program.doCurrentAction();
-
-        context.close();
 
         // Define a family of algorithms, encapsulate each one, and make them interchangeable.
         // Strategy lets the algorithm vary independently from clients that use it.

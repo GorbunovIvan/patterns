@@ -1,7 +1,9 @@
 package org.example.structural.composite;
 
 public class Main {
+
     public static void main(String[] args) {
+
         // Tree-like structure - each parent object has a collection of smaller objects and so on.
         House house = new House();
 

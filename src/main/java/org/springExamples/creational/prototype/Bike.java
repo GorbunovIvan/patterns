@@ -39,6 +39,10 @@ public class Bike {
         this.year = year;
     }
 
+    public Bike copy() {
+        return new Bike(getHorsePower(), getWeight(), getYear());
+    }
+
     @Override
     public String toString() {
         return "Bike{" +

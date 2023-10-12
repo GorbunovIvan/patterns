@@ -1,8 +1,7 @@
 package org.springExamples.structural.facade;
 
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-
 public class Main {
+
     public static void main(String[] args) {
 
 //        // Before
@@ -17,12 +16,8 @@ public class Main {
 //        puttingThingsInOrder.putInOrder();
 
         // After
-        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
-
-        CleaningTheRoom cleaning = context.getBean(CleaningTheRoom.class);
+        CleaningTheRoom cleaning = new CleaningTheRoom();
         cleaning.makeCleaning();
-
-        context.close();
 
         // We encapsulated some classes in a single class to manage their functionality as a single process
     }

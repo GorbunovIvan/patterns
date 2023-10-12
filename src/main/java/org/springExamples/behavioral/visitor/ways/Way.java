@@ -1,18 +1,14 @@
 package org.springExamples.behavioral.visitor.ways;
 
 import org.springExamples.behavioral.visitor.vehicles.Vehicle;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Way implements WayParts {
 
-    private final WayParts[] partsOfWay;
-
-    @Autowired
-    public Way(WayParts[] partsOfWay) {
-        this.partsOfWay = partsOfWay;
-    }
+    private final WayParts[] partsOfWay = new WayParts[] {
+            new Departure(),
+            new TraversingRoads(),
+            new Finishing()
+    };
 
     @Override
     public void passTheWay(Vehicle vehicle) {

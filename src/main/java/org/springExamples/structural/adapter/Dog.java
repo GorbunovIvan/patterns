@@ -1,8 +1,5 @@
 package org.springExamples.structural.adapter;
 
-import org.springframework.stereotype.Component;
-
-@Component
 public class Dog {
     public void eatFood() {
         System.out.println("eating food");

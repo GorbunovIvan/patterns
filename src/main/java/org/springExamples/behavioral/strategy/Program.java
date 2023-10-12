@@ -1,9 +1,7 @@
 package org.springExamples.behavioral.strategy;
 
 import org.springExamples.behavioral.strategy.states.Activity;
-import org.springframework.stereotype.Component;
 
-@Component
 public class Program {
 
     private Activity activity;

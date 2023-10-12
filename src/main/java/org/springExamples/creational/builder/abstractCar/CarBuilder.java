@@ -1,6 +1,7 @@
 package org.springExamples.creational.builder.abstractCar;
 
 public interface CarBuilder {
+
     CarBuilder setColor(String color);
 
     CarBuilder setModel(String model);

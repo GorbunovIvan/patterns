@@ -1,6 +1,7 @@
 package org.example.structural.decorator;
 
 public class SeniorWorker extends EmployeeDecorator {
+
     public SeniorWorker(Employee employee) {
         super(employee);
     }
