@@ -1,7 +1,11 @@
 package org.springExamples.creational.builder;
 
 import org.springExamples.creational.builder.abstractCar.Car;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope("prototype")
 public class Sedan implements Car {
 
     private String color;

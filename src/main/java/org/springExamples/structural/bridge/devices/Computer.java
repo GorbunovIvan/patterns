@@ -1,12 +1,9 @@
 package org.springExamples.structural.bridge.devices;
 
-import org.springExamples.structural.bridge.activities.Activity;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Computer extends Device {
-
-    public Computer(Activity activity) {
-        super(activity);
-    }
 
     @Override
     public void makeUse() {

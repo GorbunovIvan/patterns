@@ -1,5 +1,8 @@
 package org.springExamples.structural.adapter;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class AdapterDogToAnimal extends Dog implements Animal {
 
     @Override

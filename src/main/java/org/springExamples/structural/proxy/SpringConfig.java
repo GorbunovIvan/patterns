@@ -1,18 +1,22 @@
 package org.springExamples.structural.proxy;
 
-public class Main {
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class SpringConfig {
 
     public static void main(String[] args) {
 
-//        // Before
-//        Animal dog = new Dog();
-//        System.out.println("dog is created, now it will make sound");
-//        dog.makeSound();
+        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        // After
-        Animal dog = new ProxyDog();
+        Animal dog = context.getBean(ProxyDog.class);
         System.out.println("dog is not created yet");
         dog.makeSound();
+
+        context.close();
 
         // The point is to create a proxy of object which will encapsulate the object
         // that (the real object) will not be available to us (but not obligatorily).
