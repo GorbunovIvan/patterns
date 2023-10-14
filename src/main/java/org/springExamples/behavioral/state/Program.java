@@ -1,10 +1,22 @@
 package org.springExamples.behavioral.state;
 
 import org.springExamples.behavioral.state.states.*;
+import org.springframework.beans.BeansException;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.stereotype.Component;
 
-public class Program {
+@Component
+public class Program implements ApplicationContextAware {
 
     private Activity activity;
+
+    private ApplicationContext context;
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.context = applicationContext;
+    }
 
     public Activity getActivity() {
         return this.activity;
@@ -20,15 +32,15 @@ public class Program {
 
     public void setNextActivity() {
         if (activity == null)
-            activity = new Initializing();
+            activity = context.getBean(Initializing.class);
         else if (activity instanceof Initializing)
-            activity = new ConnectingToInternet();
+            activity = context.getBean(ConnectingToInternet.class);
         else if (activity instanceof ConnectingToInternet)
-            activity = new ParsingData();
+            activity = context.getBean(ParsingData.class);
         else if (activity instanceof ParsingData)
-            activity = new SavingData();
+            activity = context.getBean(SavingData.class);
         else if (activity instanceof SavingData)
-            activity = new ShuttingDown();
+            activity = context.getBean(ShuttingDown.class);
         else
             activity = null;
     }

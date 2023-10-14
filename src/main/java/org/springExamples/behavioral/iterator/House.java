@@ -6,7 +6,11 @@ import java.util.NoSuchElementException;
 
 public class House {
 
-    final List<Room> rooms = new ArrayList<>();
+    private final List<Room> rooms = new ArrayList<>();
+
+    public void addRoom(Room room) {
+        rooms.add(room);
+    }
 
     public Iterator<EntityOfHouse> iterator() {
         return new Iter(false);

@@ -1,14 +1,23 @@
 package org.springExamples.behavioral.mediator;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class SimpleUser implements User {
 
-    private final String name;
+    private String name;
     private final Chat chat;
 
-    public SimpleUser(String name, Chat chat) {
-        this.name = name;
+    public SimpleUser(Chat chat) {
         this.chat = chat;
         chat.addUser(this);
+    }
+
+    @Override
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override

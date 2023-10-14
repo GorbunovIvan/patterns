@@ -3,7 +3,9 @@ package org.springExamples.behavioral.visitor.vehicles;
 import org.springExamples.behavioral.visitor.ways.Departure;
 import org.springExamples.behavioral.visitor.ways.Finishing;
 import org.springExamples.behavioral.visitor.ways.TraversingRoads;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Truck implements Vehicle {
 
     @Override

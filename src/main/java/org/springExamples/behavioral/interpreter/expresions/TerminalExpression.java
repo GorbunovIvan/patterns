@@ -1,10 +1,17 @@
 package org.springExamples.behavioral.interpreter.expresions;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope("prototype")
 public class TerminalExpression implements Expression {
 
-    private final String data;
+    private String data;
 
-    public TerminalExpression(String data) {
+    public TerminalExpression() {}
+
+    public void setData(String data) {
         this.data = data.toLowerCase();
     }
 

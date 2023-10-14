@@ -1,12 +1,17 @@
 package org.springExamples.behavioral.observer;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.Set;
 
+@Component
+@Scope("prototype")
 public class Subscriber implements Observer {
 
-    public final String name;
+    public String name;
 
-    public Subscriber(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
