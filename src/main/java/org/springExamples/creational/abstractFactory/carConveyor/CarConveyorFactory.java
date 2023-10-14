@@ -7,14 +7,17 @@ import org.springExamples.creational.abstractFactory.abstractConveyor.WheelsAdde
 
 public class CarConveyorFactory implements ConveyorFactory {
 
+    @Override
     public BodyMaker getBodyMaker() {
         return new CarBodyMaker();
     }
 
+    @Override
     public WheelsAdder getWheelsAdder() {
         return new SmallWheelsAdder();
     }
 
+    @Override
     public Stuffing getStuffing() {
         return new ElectronicStuffing();
     }

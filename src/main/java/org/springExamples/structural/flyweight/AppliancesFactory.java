@@ -27,5 +27,4 @@ public class AppliancesFactory {
 
         return appliances;
     }
-
 }

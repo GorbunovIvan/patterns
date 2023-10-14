@@ -6,6 +6,7 @@ public class SeniorWorker extends EmployeeDecorator {
         super(employee);
     }
 
+    @Override
     public String doWork() {
         return employee.doWork() + " and reviewing work of others";
     }

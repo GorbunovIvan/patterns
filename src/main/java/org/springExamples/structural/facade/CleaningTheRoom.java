@@ -1,6 +1,7 @@
 package org.springExamples.structural.facade;
 
 public class CleaningTheRoom {
+
     private final ScanningWhatToClean scanning = new ScanningWhatToClean();
     private final GatheringMess gatheringMess = new GatheringMess();
     private final PuttingThingsInOrder puttingThingsInOrder = new PuttingThingsInOrder();

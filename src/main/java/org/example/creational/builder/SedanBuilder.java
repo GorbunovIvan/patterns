@@ -14,26 +14,31 @@ public class SedanBuilder implements CarBuilder {
         return builder;
     }
 
+    @Override
     public CarBuilder setColor(String color) {
         this.car.setColor(color);
         return this;
     }
 
+    @Override
     public CarBuilder setModel(String model) {
         this.car.setModel(model);
         return this;
     }
 
+    @Override
     public CarBuilder setNumberOfSeats(int numberOfSeats) {
         this.car.setNumberOfSeats(numberOfSeats);
         return this;
     }
 
+    @Override
     public CarBuilder setNumberOfDoors(int numberOfDoors) {
         this.car.setNumberOfDoors(numberOfDoors);
         return this;
     }
 
+    @Override
     public Sedan build() {
         if (car.getModel().isEmpty())
             throw new IllegalStateException("empty model");
