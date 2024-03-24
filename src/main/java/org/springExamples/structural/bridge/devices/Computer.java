@@ -1,13 +1,12 @@
 package org.springExamples.structural.bridge.devices;
 
-import org.springExamples.structural.bridge.activities.Activity;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Computer extends Device {
-
-    public Computer(Activity activity) {
-        super(activity);
-    }
-
     @Override
     public void makeUse() {
         activity.act();
