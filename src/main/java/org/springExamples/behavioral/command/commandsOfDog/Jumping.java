@@ -1,7 +1,9 @@
 package org.springExamples.behavioral.command.commandsOfDog;
 
 import org.springExamples.behavioral.command.Dog;
+import org.springframework.stereotype.Component;
 
+@Component
 public class Jumping extends Command {
 
     public Jumping(Dog dog) {

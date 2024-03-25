@@ -4,14 +4,10 @@ import org.springExamples.creational.builder.abstractCar.CarBuilder;
 
 public class SedanBuilder implements CarBuilder {
 
-    private Sedan car;
+    private final Sedan car;
 
-    private SedanBuilder(){}
-
-    public static CarBuilder newCar() {
-        SedanBuilder builder = new SedanBuilder();
-        builder.car = new Sedan();
-        return builder;
+    public SedanBuilder(Sedan car) {
+        this.car = car;
     }
 
     @Override

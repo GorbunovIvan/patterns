@@ -4,9 +4,9 @@ import org.springExamples.structural.bridge.activities.Activity;
 
 public abstract class Device {
 
-    protected final Activity activity;
+    protected Activity activity;
 
-    protected Device(Activity activity) {
+    public void setActivity(Activity activity) {
         this.activity = activity;
     }
 

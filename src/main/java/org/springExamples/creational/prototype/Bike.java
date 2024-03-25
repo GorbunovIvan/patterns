@@ -1,18 +1,27 @@
 package org.springExamples.creational.prototype;
 
-public class Bike {
+import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.ApplicationContextAware;
+import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
+@Primary
+public class Bike implements ApplicationContextAware {
 
     private int horsePower;
     private int weight;
     private int year;
 
-    public Bike() {
-    }
+    private ApplicationContext applicationContext;
 
-    public Bike(int horsePower, int weight, int year) {
-        this.horsePower = horsePower;
-        this.weight = weight;
-        this.year = year;
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
     }
 
     public int getHorsePower() {
@@ -40,7 +49,11 @@ public class Bike {
     }
 
     public Bike copy() {
-        return new Bike(getHorsePower(), getWeight(), getYear());
+        var newBike = applicationContext.getBean(Bike.class);
+        newBike.setHorsePower(getHorsePower());
+        newBike.setWeight(getWeight());
+        newBike.setYear(getYear());
+        return newBike;
     }
 
     @Override

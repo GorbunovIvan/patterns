@@ -1,7 +1,9 @@
 package org.springExamples.structural.facade;
 
-public class GatheringMess {
+import org.springframework.stereotype.Component;
 
+@Component
+public class GatheringMess {
     public void gatherMess() {
         System.out.println("gathering the mess");
     }

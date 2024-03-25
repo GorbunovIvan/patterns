@@ -4,21 +4,36 @@ import org.springExamples.creational.abstractFactory.abstractConveyor.BodyMaker;
 import org.springExamples.creational.abstractFactory.abstractConveyor.ConveyorFactory;
 import org.springExamples.creational.abstractFactory.abstractConveyor.Stuffing;
 import org.springExamples.creational.abstractFactory.abstractConveyor.WheelsAdder;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BicycleConveyorFactory implements ConveyorFactory {
+
+    private final BodyMaker bodyMaker;
+    private final WheelsAdder wheelsAdder;
+    private final Stuffing stuffing;
+
+    public BicycleConveyorFactory(@Qualifier("bicycleBodyMaker") BodyMaker bodyMaker,
+                              @Qualifier("bicycleSmallWheelsAdder") WheelsAdder wheelsAdder,
+                              @Qualifier("stuffingWithMechanics") Stuffing stuffing) {
+        this.bodyMaker = bodyMaker;
+        this.wheelsAdder = wheelsAdder;
+        this.stuffing = stuffing;
+    }
 
     @Override
     public BodyMaker getBodyMaker() {
-        return new BicycleBodyMaker();
+        return bodyMaker;
     }
 
     @Override
     public WheelsAdder getWheelsAdder() {
-        return new BicycleSmallWheelsAdder();
+        return wheelsAdder;
     }
 
     @Override
     public Stuffing getStuffing() {
-        return new StuffingWithMechanics();
+        return stuffing;
     }
 }
