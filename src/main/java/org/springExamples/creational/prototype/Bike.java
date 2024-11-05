@@ -9,12 +9,6 @@ public class Bike {
     public Bike() {
     }
 
-    public Bike(int horsePower, int weight, int year) {
-        this.horsePower = horsePower;
-        this.weight = weight;
-        this.year = year;
-    }
-
     public int getHorsePower() {
         return horsePower;
     }
@@ -39,8 +33,11 @@ public class Bike {
         this.year = year;
     }
 
-    public Bike copy() {
-        return new Bike(getHorsePower(), getWeight(), getYear());
+    public Bike copyTo(Bike newEmptyBike) {
+        newEmptyBike.setHorsePower(getHorsePower());
+        newEmptyBike.setWeight(getWeight());
+        newEmptyBike.setYear(getYear());
+        return newEmptyBike;
     }
 
     @Override

@@ -14,7 +14,8 @@ public class Hall implements Room {
     @Override
     public void buildRoom() {
         System.out.println("    building hall room");
-        for (var window : windows)
+        for (var window : windows) {
             window.buildWindow();
+        }
     }
 }

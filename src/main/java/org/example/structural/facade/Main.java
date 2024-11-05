@@ -19,6 +19,7 @@ public class Main {
         CleaningTheRoom cleaning = new CleaningTheRoom();
         cleaning.makeCleaning();
 
-        // We encapsulated some classes in a single class to manage their functionality as a single process
+        // We encapsulated some classes in a single class to manage their functionality as a single process,
+        // ensuring "single responsibility"
     }
 }

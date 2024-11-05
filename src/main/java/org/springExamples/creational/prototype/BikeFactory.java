@@ -12,7 +12,7 @@ public class BikeFactory {
         this.bike = bike;
     }
 
-    public Bike getNewCopy() {
-        return bike.copy();
+    public Bike setFrameTo(Bike newEmptyBike) {
+        return bike.copyTo(newEmptyBike);
     }
 }

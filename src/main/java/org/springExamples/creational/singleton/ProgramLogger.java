@@ -1,23 +1,20 @@
 package org.springExamples.creational.singleton;
 
-public class ProgramLogger { // also may be final if necessary
+import org.springframework.stereotype.Component;
 
-    private static ProgramLogger logger;
+@Component
+public class ProgramLogger {
+
     private final StringBuffer logs;
-
-    public synchronized static ProgramLogger getLogger() {
-        if (logger == null)
-            logger = new ProgramLogger();
-        return logger;
-    }
 
     private ProgramLogger() {
         logs = new StringBuffer();
     }
 
     public void addLog(String log) {
-        if (!logs.isEmpty())
+        if (!logs.isEmpty()) {
             logs.append('\n');
+        }
         logs.append(log);
     }
 

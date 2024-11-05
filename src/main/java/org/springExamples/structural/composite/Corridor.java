@@ -14,7 +14,8 @@ public class Corridor implements Room {
     @Override
     public void buildRoom() {
         System.out.println("    building corridor room");
-        for (var window : windows)
+        for (var window : windows) {
             window.buildWindow();
+        }
     }
 }

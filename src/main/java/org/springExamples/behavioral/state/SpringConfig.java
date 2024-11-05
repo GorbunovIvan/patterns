@@ -1,16 +1,25 @@
 package org.springExamples.behavioral.state;
 
-public class Main {
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@ComponentScan
+public class SpringConfig {
 
     public static void main(String[] args) {
 
-        Program program = new Program();
-        program.setNextActivity();
+        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
+
+        Program program = context.getBean(Program.class);
 
         while (program.getActivity() != null) {
             program.doCurrentAction();
             program.setNextActivity();
         }
+
+        context.close();
 
         // An object can change its behavior depending on its state, which is taken out to another object.
         // Different states are different classes, so we can handle them as different objects.

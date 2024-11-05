@@ -1,17 +1,19 @@
 package org.springExamples.creational.builder;
 
+import org.springExamples.creational.builder.abstractCar.Car;
 import org.springExamples.creational.builder.abstractCar.CarBuilder;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class SedanBuilder implements CarBuilder {
 
-    private Sedan car;
+    private final Car car;
 
-    private SedanBuilder(){}
-
-    public static CarBuilder newCar() {
-        SedanBuilder builder = new SedanBuilder();
-        builder.car = new Sedan();
-        return builder;
+    private SedanBuilder(Car sedan) {
+        this.car = sedan;
     }
 
     @Override
@@ -39,12 +41,14 @@ public class SedanBuilder implements CarBuilder {
     }
 
     @Override
-    public Sedan build() {
-        if (car.getModel().isEmpty())
-            throw new IllegalStateException("empty model");
+    public Car build() {
+        if (car.getModel().isEmpty()) {
+            throw new IllegalStateException("Empty model");
+        }
         if (car.getNumberOfSeats() > car.getNumberOfDoors()*2
-            || car.getNumberOfDoors() > car.getNumberOfSeats()*2)
-            throw new IllegalStateException("number of seats is inconsistent with the number of doors");
+                || car.getNumberOfDoors() > car.getNumberOfSeats()*2) {
+            throw new IllegalStateException("Number of seats is inconsistent with the number of doors");
+        }
         return car;
     }
 }

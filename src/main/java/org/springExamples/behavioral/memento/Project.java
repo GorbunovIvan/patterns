@@ -1,16 +1,19 @@
 package org.springExamples.behavioral.memento;
 
+import org.springframework.stereotype.Component;
+
 import java.time.LocalDateTime;
 
+@Component
 public class Project {
 
     private String version;
     private LocalDateTime date;
 
-    public final GitHub gitHub = new GitHub();
+    public final GitHub gitHub;
 
-    public Project(String version) {
-        this.version = version;
+    public Project(GitHub gitHub) {
+        this.gitHub = gitHub;
         this.date = LocalDateTime.now();
     }
 
@@ -30,8 +33,9 @@ public class Project {
 
     public void loadVersion(String version) {
         Save save = gitHub.getSaveByVersion(version);
-        if (save == null)
+        if (save == null) {
             throw new IllegalArgumentException();
+        }
         this.version = save.version;
         this.date = save.date;
     }

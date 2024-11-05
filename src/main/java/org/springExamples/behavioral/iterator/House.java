@@ -33,14 +33,17 @@ public class House {
         }
         @Override
         public EntityOfHouse next() {
-            if (!hasNext())
+            if (!hasNext()) {
                 throw new NoSuchElementException();
+            }
             Room currentRoom = rooms.get(roomIndex);
             if (deep) {
-                if (iterOfWindowsOfCurrentRoom == null)
+                if (iterOfWindowsOfCurrentRoom == null) {
                     iterOfWindowsOfCurrentRoom = currentRoom.iterator();
-                if (iterOfWindowsOfCurrentRoom.hasNext())
+                }
+                if (iterOfWindowsOfCurrentRoom.hasNext()) {
                     return iterOfWindowsOfCurrentRoom.next();
+                }
                 iterOfWindowsOfCurrentRoom = null;
             }
             roomIndex++;

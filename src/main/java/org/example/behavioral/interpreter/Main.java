@@ -12,11 +12,11 @@ public class Main {
         Expression expressionJava = new TerminalExpression("Java");
         Expression expressionSpring = new TerminalExpression("Spring");
 
-        // the word "java" must contain at least one of the expressions
+        // The word "java" must contain at least one of the passed expressions
         Expression orExpression = new OrExpression(expressionJava, expressionSpring);
-        System.out.println("is java developer: " + orExpression.interpret("java"));
+        System.out.println("is java developer: " + orExpression.interpret("java EE"));
 
-        // the expression "Java spring" must contain both of the expressions
+        // The expression "Java spring" must contain both of the passed expressions
         Expression andExpression = new AndExpression(expressionJava, expressionSpring);
         System.out.println("is fullstack developer: " + andExpression.interpret("Java spring"));
     }

@@ -1,22 +1,27 @@
 package org.springExamples.behavioral.observer;
 
+import org.springframework.stereotype.Component;
+
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
+@Component
 public class JobSite implements Observed {
 
     private final Set<Observer> subscribers = new HashSet<>();
     private final Set<String> vacancies = new LinkedHashSet<>();
 
     public void addVacancy(String vacancy) {
-        if (vacancies.add(vacancy))
+        if (vacancies.add(vacancy)) {
             notifyObservers();
+        }
     }
 
     public void removeVacancy(String vacancy) {
-        if (vacancies.remove(vacancy))
+        if (vacancies.remove(vacancy)) {
             notifyObservers();
+        }
     }
 
     @Override

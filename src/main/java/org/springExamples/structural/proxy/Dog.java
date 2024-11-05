@@ -1,12 +1,17 @@
 package org.springExamples.structural.proxy;
 
+import org.springframework.context.annotation.Lazy;
+import org.springframework.stereotype.Component;
+
+@Component
+@Lazy
 public class Dog implements Animal {
 
     public Dog() {
         getUp();
     }
 
-    public void getUp() {
+    private void getUp() {
         System.out.println("getting up");
     }
 
