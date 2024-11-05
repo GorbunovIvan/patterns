@@ -14,7 +14,8 @@ public class BedRoom implements Room {
     @Override
     public void buildRoom() {
         System.out.println("    building bedroom");
-        for (var window : windows)
+        for (var window : windows) {
             window.buildWindow();
+        }
     }
 }

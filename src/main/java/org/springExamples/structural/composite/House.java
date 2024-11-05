@@ -13,7 +13,8 @@ public class House {
 
     public void buildHouse() {
         System.out.println("building house");
-        for (var room : rooms)
+        for (var room : rooms) {
             room.buildRoom();
+        }
     }
 }

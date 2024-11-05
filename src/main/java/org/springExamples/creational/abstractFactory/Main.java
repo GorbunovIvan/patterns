@@ -22,6 +22,7 @@ public class Main {
         // After
         ConveyorFactory conveyorFactory = new CarConveyorFactory();
 //        ConveyorFactory conveyorFactory = new BicycleConveyorFactory();
+
         BodyMaker bodyMaker = conveyorFactory.getBodyMaker();
         WheelsAdder wheelsAdder = conveyorFactory.getWheelsAdder();
         Stuffing stuffing = conveyorFactory.getStuffing();

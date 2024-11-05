@@ -19,17 +19,18 @@ public class Program {
     }
 
     public void setNextActivity() {
-        if (activity == null)
+        if (activity == null) {
             activity = new Initializing();
-        else if (activity instanceof Initializing)
+        } else if (activity instanceof Initializing) {
             activity = new ConnectingToInternet();
-        else if (activity instanceof ConnectingToInternet)
+        } else if (activity instanceof ConnectingToInternet) {
             activity = new ParsingData();
-        else if (activity instanceof ParsingData)
+        } else if (activity instanceof ParsingData) {
             activity = new SavingData();
-        else if (activity instanceof SavingData)
+        } else if (activity instanceof SavingData) {
             activity = new ShuttingDown();
-        else
+        } else {
             activity = null;
+        }
     }
 }

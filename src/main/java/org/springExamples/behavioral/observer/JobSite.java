@@ -10,13 +10,15 @@ public class JobSite implements Observed {
     private final Set<String> vacancies = new LinkedHashSet<>();
 
     public void addVacancy(String vacancy) {
-        if (vacancies.add(vacancy))
+        if (vacancies.add(vacancy)) {
             notifyObservers();
+        }
     }
 
     public void removeVacancy(String vacancy) {
-        if (vacancies.remove(vacancy))
+        if (vacancies.remove(vacancy)) {
             notifyObservers();
+        }
     }
 
     @Override

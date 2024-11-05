@@ -14,8 +14,10 @@ public class SimpleChat implements Chat {
 
     @Override
     public void sendMessage(String message, User sender) {
-        for (var user : users)
-            if (user != sender)
+        for (var user : users) {
+            if (user != sender) {
                 user.getMessage(message);
+            }
+        }
     }
 }

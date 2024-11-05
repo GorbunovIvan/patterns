@@ -12,8 +12,9 @@ public class GitHub {
     }
 
     public Save getLastSave() {
-        if (saves.isEmpty())
+        if (saves.isEmpty()) {
             return null;
+        }
         return saves.get(saves.size()-1);
     }
 
@@ -30,8 +31,9 @@ public class GitHub {
 
     @Override
     public String toString() {
-        if (saves.isEmpty())
+        if (saves.isEmpty()) {
             return "GitHub{}";
+        }
         return "GitHub{total number of saves is " + saves.size() +
                 ", last save is: " + getLastSave() + "}";
     }

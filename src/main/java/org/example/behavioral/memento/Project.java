@@ -30,8 +30,9 @@ public class Project {
 
     public void loadVersion(String version) {
         Save save = gitHub.getSaveByVersion(version);
-        if (save == null)
+        if (save == null) {
             throw new IllegalArgumentException();
+        }
         this.version = save.version;
         this.date = save.date;
     }

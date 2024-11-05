@@ -6,7 +6,7 @@ public class Dog implements Animal {
         getUp();
     }
 
-    public void getUp() {
+    private void getUp() {
         System.out.println("getting up");
     }
 

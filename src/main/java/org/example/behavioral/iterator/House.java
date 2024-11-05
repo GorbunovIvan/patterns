@@ -20,7 +20,7 @@ public class House {
         return new Iter(true);
     }
 
-    class Iter implements Iterator<EntityOfHouse>{
+    class Iter implements Iterator<EntityOfHouse> {
         private int roomIndex = 0;
         private Iterator<Window> iterOfWindowsOfCurrentRoom;
         private final boolean deep; // with windows
@@ -33,14 +33,17 @@ public class House {
         }
         @Override
         public EntityOfHouse next() {
-            if (!hasNext())
+            if (!hasNext()) {
                 throw new NoSuchElementException();
+            }
             Room currentRoom = rooms.get(roomIndex);
             if (deep) {
-                if (iterOfWindowsOfCurrentRoom == null)
+                if (iterOfWindowsOfCurrentRoom == null) {
                     iterOfWindowsOfCurrentRoom = currentRoom.iterator();
-                if (iterOfWindowsOfCurrentRoom.hasNext())
+                }
+                if (iterOfWindowsOfCurrentRoom.hasNext()) {
                     return iterOfWindowsOfCurrentRoom.next();
+                }
                 iterOfWindowsOfCurrentRoom = null;
             }
             roomIndex++;

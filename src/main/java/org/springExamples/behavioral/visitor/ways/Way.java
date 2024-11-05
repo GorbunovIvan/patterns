@@ -12,7 +12,8 @@ public class Way implements WayParts {
 
     @Override
     public void passTheWay(Vehicle vehicle) {
-        for (var part : partsOfWay)
+        for (var part : partsOfWay) {
             part.passTheWay(vehicle);
+        }
     }
 }

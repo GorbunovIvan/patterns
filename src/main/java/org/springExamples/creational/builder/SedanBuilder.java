@@ -6,7 +6,8 @@ public class SedanBuilder implements CarBuilder {
 
     private Sedan car;
 
-    private SedanBuilder(){}
+    private SedanBuilder() {
+    }
 
     public static CarBuilder newCar() {
         SedanBuilder builder = new SedanBuilder();
@@ -40,11 +41,13 @@ public class SedanBuilder implements CarBuilder {
 
     @Override
     public Sedan build() {
-        if (car.getModel().isEmpty())
-            throw new IllegalStateException("empty model");
+        if (car.getModel().isEmpty()) {
+            throw new IllegalStateException("Empty model");
+        }
         if (car.getNumberOfSeats() > car.getNumberOfDoors()*2
-            || car.getNumberOfDoors() > car.getNumberOfSeats()*2)
-            throw new IllegalStateException("number of seats is inconsistent with the number of doors");
+            || car.getNumberOfDoors() > car.getNumberOfSeats()*2) {
+            throw new IllegalStateException("Number of seats is inconsistent with the number of doors");
+        }
         return car;
     }
 }

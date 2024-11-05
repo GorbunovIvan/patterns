@@ -6,8 +6,9 @@ public class ProgramLogger { // also may be final if necessary
     private final StringBuffer logs;
 
     public synchronized static ProgramLogger getLogger() {
-        if (logger == null)
+        if (logger == null) {
             logger = new ProgramLogger();
+        }
         return logger;
     }
 
@@ -16,8 +17,9 @@ public class ProgramLogger { // also may be final if necessary
     }
 
     public void addLog(String log) {
-        if (!logs.isEmpty())
+        if (!logs.isEmpty()) {
             logs.append('\n');
+        }
         logs.append(log);
     }
 

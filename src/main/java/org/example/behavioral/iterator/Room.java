@@ -26,8 +26,9 @@ public class Room implements EntityOfHouse {
         }
         @Override
         public Window next() {
-            if (!hasNext())
+            if (!hasNext()) {
                 throw new NoSuchElementException();
+            }
             return windows.get(windowIndex++);
         }
     }

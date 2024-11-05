@@ -6,8 +6,9 @@ public class ProxyDog implements Animal {
 
     @Override
     public void makeSound() {
-        if (dog == null)
+        if (dog == null) {
             dog = new Dog();
+        }
         dog.makeSound();
     }
 }

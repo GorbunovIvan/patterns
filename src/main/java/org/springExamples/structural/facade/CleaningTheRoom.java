@@ -7,6 +7,7 @@ public class CleaningTheRoom {
     private final PuttingThingsInOrder puttingThingsInOrder = new PuttingThingsInOrder();
 
     public void makeCleaning() {
+
         System.out.println("starting to clean the room\n");
 
         scanning.scan();
@@ -16,5 +17,4 @@ public class CleaningTheRoom {
 
         System.out.println("\nthe room is cleaned");
     }
-
 }
