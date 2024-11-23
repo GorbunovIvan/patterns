@@ -20,6 +20,8 @@ public class Main {
         // Now the "orderTheDogToFollowACommand()" method may not know what command it accepts,
         // because each command is no longer a method, but a different class.
         // So the point is to create the different classes for the algorithms.
+        //
+        // Functional programming has made the pattern command pretty outdated.
     }
 
     static void orderTheDogToFollowACommand(Command command) {

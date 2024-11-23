@@ -14,11 +14,13 @@ public abstract class Notifier {
     }
 
     public void sendMessage(String message, Priority priority) {
-        if (this.priority.getIndex() > priority.getIndex())
+        if (this.priority.getIndex() > priority.getIndex()) {
             return;
+        }
         writeMessage(message);
-        if (this.priority.getIndex() < priority.getIndex())
+        if (this.priority.getIndex() < priority.getIndex()) {
             nextNotifier.sendMessage(message, priority);
+        }
     }
 
     public abstract void writeMessage(String message);
