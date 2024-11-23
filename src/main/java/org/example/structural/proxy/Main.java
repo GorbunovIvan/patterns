@@ -11,7 +11,7 @@ public class Main {
 
         // After
         Animal dog = new ProxyDog();
-        System.out.println("dog is not created yet");
+        System.out.println("ProxyDog created, but Dog should not be created yet");
         dog.makeSound();
 
         // The point is to create a proxy of object which will encapsulate the object

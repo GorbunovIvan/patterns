@@ -15,7 +15,7 @@ public class GitHub {
         if (saves.isEmpty()) {
             return null;
         }
-        return saves.get(saves.size()-1);
+        return saves.getLast();
     }
 
     public Save getSaveByVersion(String version) {

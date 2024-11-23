@@ -26,8 +26,9 @@ public class Main {
         // Define a family of algorithms, encapsulate each one, and make them interchangeable.
         // Strategy lets the algorithm vary independently from clients that use it.
         // So different clients may choose different ways and orders in using algorithms.
-        // It may look very similar to the state pattern, but instead of state,
-        // strategy does not define change order of algorithms and does not impose an obligation on clients
+        //
+        // It may look very similar to the "State" pattern, but instead of "State",
+        // "Strategy" doesn't define change order of algorithms and does not impose an obligation on clients
         // in using them.
     }
 }

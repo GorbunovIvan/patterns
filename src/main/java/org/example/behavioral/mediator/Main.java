@@ -15,6 +15,8 @@ public class Main {
 
         // The chat (mediator here) is a class that encapsulates the relations and communication between other classes.
         // Mediator promotes loose coupling by keeping objects from referring to each other explicitly, and it
-        // lets you vary their interaction independently
+        // lets you vary their interaction independently.
+        //
+        // Here Users instead of depending on each other (or knowing about each other) depend on the Chat (Mediator)
     }
 }

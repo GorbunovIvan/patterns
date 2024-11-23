@@ -1,6 +1,6 @@
 package org.springExamples.behavioral.strategy;
 
-import org.springExamples.behavioral.strategy.states.*;
+import org.springExamples.behavioral.strategy.states.Activity;
 
 public class Program {
 

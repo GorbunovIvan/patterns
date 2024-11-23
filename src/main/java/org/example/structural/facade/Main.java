@@ -20,6 +20,6 @@ public class Main {
         cleaning.makeCleaning();
 
         // We encapsulated some classes in a single class to manage their functionality as a single process,
-        // ensuring "single responsibility"
+        // ensuring "Single Responsibility"
     }
 }

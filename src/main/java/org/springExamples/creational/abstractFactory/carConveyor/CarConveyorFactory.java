@@ -14,7 +14,7 @@ public class CarConveyorFactory implements ConveyorFactory {
 
     @Override
     public WheelsAdder getWheelsAdder() {
-        return new SmallWheelsAdder();
+        return new BigWheelsAdder();
     }
 
     @Override

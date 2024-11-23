@@ -1,6 +1,5 @@
 package org.springExamples.behavioral.observer;
 
-
 import java.util.Set;
 
 public interface Observer {

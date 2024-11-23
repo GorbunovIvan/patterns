@@ -1,6 +1,6 @@
 package org.example.behavioral.strategy;
 
-import org.example.behavioral.strategy.states.*;
+import org.example.behavioral.strategy.states.Activity;
 
 public class Program {
 
