@@ -7,7 +7,7 @@ public class Room implements EntityOfHouse {
 
     private final int id;
 
-    final List<Window> windows;
+    private final List<Window> windows;
 
     public Room(int id, List<Window> windows) {
         this.id = id;

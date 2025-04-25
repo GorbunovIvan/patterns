@@ -4,7 +4,7 @@ public enum Priority {
 
     SIMPLE(1),
     IMPORTANT(2),
-    ASAP(3); // as soon as possible
+    ASAP(3);  // As soon as possible
 
     private final int index;
 

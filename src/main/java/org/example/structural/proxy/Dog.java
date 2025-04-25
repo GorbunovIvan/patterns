@@ -3,11 +3,7 @@ package org.example.structural.proxy;
 public class Dog implements Animal {
 
     public Dog() {
-        getUp();
-    }
-
-    private void getUp() {
-        System.out.println("getting up");
+        System.out.println("Dog created");
     }
 
     @Override

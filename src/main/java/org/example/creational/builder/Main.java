@@ -12,9 +12,9 @@ public class Main {
 //        car.setColor("Black");
 //        car.setModel("BMW");
 //        car.setNumberOfSeats(5);
-//        car.setNumberOfDoors(2); // actually wrong because 5 seats and only 2 doors is strange
+//        car.setNumberOfDoors(2);  // Actually wrong, because 5 seats and only 2 doors is strange
 //
-//        // we are not sure if all the fields are filled
+//        // We are not sure that all fields are filled in
 //        System.out.println(car);
 
         // After

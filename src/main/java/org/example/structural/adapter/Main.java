@@ -12,7 +12,7 @@ public class Main {
         dog.run();
         dog.jump();
 
-        // The methods of class Dog resemble those of the interface "Animal", but are not the same,
+        // The methods of class "Dog" resemble those of the interface "Animal", but are not the same,
         // so we need an adapter that will match the methods we need
     }
 }

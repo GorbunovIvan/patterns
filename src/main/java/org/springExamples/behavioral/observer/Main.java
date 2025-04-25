@@ -15,7 +15,7 @@ public class Main {
         jobSite.removeVacancy("first vacancy");
 
         // Making one-to-many connection.
-        // When one object must notify others without making assumptions about those other objects or whether they exist
-        // Classes are connected without informing them about their connection - so they only work with "event"
+        // When one object must notify others without making assumptions about those other objects or whether they exist.
+        // Classes are connected without informing them about their connection - so they only work with "event".
     }
 }
