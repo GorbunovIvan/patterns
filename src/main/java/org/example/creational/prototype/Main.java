@@ -30,5 +30,7 @@ public class Main {
 
         System.out.println(bike1);
         System.out.println(bike2);
+
+        System.out.println("Are bikes the same object?: " + (bike1 == bike2));
     }
 }

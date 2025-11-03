@@ -6,7 +6,6 @@ import java.util.NoSuchElementException;
 public class Room implements EntityOfHouse {
 
     private final int id;
-
     private final List<Window> windows;
 
     public Room(int id, List<Window> windows) {

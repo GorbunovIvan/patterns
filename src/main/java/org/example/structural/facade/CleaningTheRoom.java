@@ -8,7 +8,7 @@ public class CleaningTheRoom {
 
     public void makeCleaning() {
 
-        System.out.println("starting to clean the room\n");
+        System.out.println("starting to clean the room:\n");
 
         scanning.scan();
         gatheringMess.gatherMess();
