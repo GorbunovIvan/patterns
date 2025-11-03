@@ -1,5 +1,12 @@
 package org.springExamples.creational.prototype;
 
+import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class Bike {
 
     private int horsePower;
@@ -7,12 +14,6 @@ public class Bike {
     private int year;
 
     public Bike() {
-    }
-
-    public Bike(int horsePower, int weight, int year) {
-        this.horsePower = horsePower;
-        this.weight = weight;
-        this.year = year;
     }
 
     public int getHorsePower() {
@@ -40,7 +41,16 @@ public class Bike {
     }
 
     public Bike copy() {
-        return new Bike(getHorsePower(), getWeight(), getYear());
+        var newBike = newBike();
+        newBike.setHorsePower(this.horsePower);
+        newBike.setYear(this.year);
+        newBike.setWeight(this.weight);
+        return newBike;
+    }
+
+    @Lookup
+    public Bike newBike() {
+        return null;
     }
 
     @Override

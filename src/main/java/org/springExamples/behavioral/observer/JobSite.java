@@ -1,13 +1,26 @@
 package org.springExamples.behavioral.observer;
 
+import org.springframework.context.ApplicationEventPublisher;
+import org.springframework.context.ApplicationEventPublisherAware;
+import org.springframework.lang.NonNull;
+import org.springframework.stereotype.Component;
+
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
-public class JobSite implements Observed {
+@Component
+public class JobSite implements Observed, ApplicationEventPublisherAware {
 
     private final Set<Observer> subscribers = new HashSet<>();
     private final Set<String> vacancies = new LinkedHashSet<>();
+
+    private ApplicationEventPublisher eventPublisher;
+
+    @Override
+    public void setApplicationEventPublisher(@NonNull ApplicationEventPublisher applicationEventPublisher) {
+        this.eventPublisher = applicationEventPublisher;
+    }
 
     public void addVacancy(String vacancy) {
         if (vacancies.add(vacancy)) {
@@ -33,6 +46,7 @@ public class JobSite implements Observed {
 
     @Override
     public void notifyObservers() {
-        subscribers.forEach(s -> s.handleEvent(vacancies));
+        var event = new EventVacancy(subscribers, vacancies);
+        eventPublisher.publishEvent(event);
     }
 }

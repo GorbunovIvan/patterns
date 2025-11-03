@@ -1,24 +1,27 @@
 package org.springExamples.creational.abstractFactory.bicycleConveyor;
 
-import org.springExamples.creational.abstractFactory.abstractConveyor.BodyMaker;
 import org.springExamples.creational.abstractFactory.abstractConveyor.ConveyorFactory;
-import org.springExamples.creational.abstractFactory.abstractConveyor.Stuffing;
-import org.springExamples.creational.abstractFactory.abstractConveyor.WheelsAdder;
+import org.springframework.beans.factory.annotation.Lookup;
+import org.springframework.stereotype.Component;
 
+@Component
 public class BicycleConveyorFactory implements ConveyorFactory {
 
     @Override
-    public BodyMaker getBodyMaker() {
-        return new BicycleBodyMaker();
+    @Lookup("bicycleBodyMaker")
+    public BicycleBodyMaker getBodyMaker() {
+        return null;
     }
 
     @Override
-    public WheelsAdder getWheelsAdder() {
-        return new BicycleSmallWheelsAdder();
+    @Lookup("bicycleSmallWheelsAdder")
+    public BicycleSmallWheelsAdder getWheelsAdder() {
+        return null;
     }
 
     @Override
-    public Stuffing getStuffing() {
-        return new StuffingWithMechanics();
+    @Lookup("stuffingWithMechanics")
+    public StuffingWithMechanics getStuffing() {
+        return null;
     }
 }

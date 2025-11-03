@@ -1,5 +1,8 @@
 package org.springExamples.behavioral.command;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Dog {
     public void makeSound() {
         System.out.println("dog is making sound");

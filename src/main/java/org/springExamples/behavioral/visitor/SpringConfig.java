@@ -5,16 +5,23 @@ import org.springExamples.behavioral.visitor.vehicles.Car;
 import org.springExamples.behavioral.visitor.vehicles.Truck;
 import org.springExamples.behavioral.visitor.vehicles.Vehicle;
 import org.springExamples.behavioral.visitor.ways.Way;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
-public class Main {
+@Configuration
+@ComponentScan
+public class SpringConfig {
 
     public static void main(String[] args) {
 
-        Way way = new Way();
+        var context = new AnnotationConfigApplicationContext(SpringConfig.class);
 
-        Vehicle car = new Car();
-        Vehicle bike = new Bike();
-        Vehicle truck = new Truck();
+        Way way = context.getBean(Way.class);
+
+        Vehicle car = context.getBean(Car.class);
+        Vehicle bike = context.getBean(Bike.class);
+        Vehicle truck = context.getBean(Truck.class);
 
         way.passTheWay(car);
         System.out.println("-----");
@@ -23,6 +30,8 @@ public class Main {
         System.out.println("-----");
 
         way.passTheWay(truck);
+
+        context.close();
 
         // Represents an operation to be performed on the elements of an object structure.
         // Visitor lets you define a new operation without changing the classes

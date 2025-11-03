@@ -1,18 +1,18 @@
 package org.springExamples.creational.builder;
 
 import org.springExamples.creational.builder.abstractCar.CarBuilder;
+import org.springframework.beans.factory.config.ConfigurableBeanFactory;
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
 
+@Component
+@Scope(ConfigurableBeanFactory.SCOPE_PROTOTYPE)
 public class SedanBuilder implements CarBuilder {
 
-    private Sedan car;
+    private final Sedan car;
 
-    private SedanBuilder() {
-    }
-
-    public static CarBuilder newCar() {
-        SedanBuilder builder = new SedanBuilder();
-        builder.car = new Sedan();
-        return builder;
+    public SedanBuilder(Sedan car) {
+        this.car = car;
     }
 
     @Override
